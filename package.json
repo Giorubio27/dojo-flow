@@ -1,0 +1,27 @@
+{
+  "name": "dojo-flow",
+  "version": "1.0.0",
+  "description": "my final project for CSE341",
+  "homepage": "https://github.com/Giorubio27/dojo-flow#readme",
+  "bugs": {
+    "url": "https://github.com/Giorubio27/dojo-flow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giorubio27/dojo-flow.git"
+  },
+  "license": "ISC",
+  "author": "Giovanni Rubio",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
