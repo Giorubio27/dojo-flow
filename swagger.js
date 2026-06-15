@@ -7,8 +7,8 @@ const doc = {
         title: 'Dojo Flow API',
         description: 'API documentation for martial arts application',
     },
-    host: 'localhost:3000',
-    schemes: ['http', 'https'],
+    host: 'dojo-flow.onrender.com',
+    schemes: ['https'],
 
    
 }

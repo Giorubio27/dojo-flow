@@ -5,10 +5,9 @@
     "description": "API documentation for martial arts application",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "dojo-flow.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
