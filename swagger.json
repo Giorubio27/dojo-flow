@@ -77,9 +77,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "id": {
-                  "example": "any"
-                },
                 "name": {
                   "example": "any"
                 },
@@ -261,9 +258,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "_id": {
-                  "example": "any"
-                },
                 "weekCommencing": {
                   "example": "any"
                 },
@@ -443,9 +437,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "_id": {
-                  "example": "any"
-                },
                 "planId": {
                   "example": "any"
                 },
@@ -630,9 +621,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "_id": {
-                  "example": "any"
-                },
                 "studentId": {
                   "example": "any"
                 },

@@ -37,7 +37,7 @@ const createPlan = async (req, res) => {
     try {
         //#swagger.tags=['plans']
         const newPlan = {
-            _id: req.body._id,
+
             weekCommencing: req.body.weekCommencing,
             focusArea: req.body.focusArea,
             difficultyTier: req.body.difficultyTier,

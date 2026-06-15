@@ -35,7 +35,7 @@ const createUser = async (req, res) => {
     try {
         //#swagger.tags=['users']
         const newUser = {
-            _id: req.body.id,
+
             name: req.body.name,
             email: req.body.email,
             role: req.body.role,

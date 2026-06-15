@@ -45,7 +45,7 @@ const createTechnique = async (req, res) => {
     try {
         //#swagger.tags=['techniques']
         const newTech = {
-            _id: req.body._id,
+
             planId: req.body.planId,
             name: req.body.name,
             category: req.body.category,

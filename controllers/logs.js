@@ -35,7 +35,7 @@ const createLog = async (req, res) => {
     try {
         //#swagger.tags=['logs']
         const newLog = {
-            _id: req.body._id,
+            
             studentId: req.body.studentId,
             date: req.body.date,
             classType: req.body.classType,
