@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const passport = require('passport')
+const passport = require('passport')
 
 
 router.use('/', require('./swagger'));
@@ -14,14 +14,14 @@ router.use('/plans', require('./plans'));
 router.use('/techniques', require('./techniques'))
 router.use('/logs', require('./logs'));
 
-// router.get('/login', passport.authenticate('github'), (req, res) => { })
+router.get('/login', passport.authenticate('github'), (req, res) => { })
 
-// router.get('/logout', function (req, res, next) {
-//     req.logout(function (err) {
-//         if (err) { return next(err); }
-//         res.redirect('/');
-//     })
-// });
+router.get('/logout', function (req, res, next) {
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    })
+});
 
 
 module.exports = router;

@@ -1,17 +1,18 @@
 const express = require('express')
 const router = express.Router();
 const { userValidationRules, handleValidationErrors } = require('../middleware/validate');
+const { isAuthenticated } = require('../middleware/auth');
 
 const usersController = require('../controllers/users');
 
-router.get('/', usersController.getAllUsers);
+router.get('/',isAuthenticated, usersController.getAllUsers);
 
 router.get('/:id', usersController.getUserById);
 
-router.post('/', userValidationRules, usersController.createUser);
+router.post('/', isAuthenticated, userValidationRules, usersController.createUser);
 
-router.put('/:id', userValidationRules, usersController.updateUser);
+router.put('/:id',isAuthenticated, userValidationRules, usersController.updateUser);
 
-router.delete('/:id', usersController.deleteUser)
+router.delete('/:id',isAuthenticated, usersController.deleteUser)
 
 module.exports = router
