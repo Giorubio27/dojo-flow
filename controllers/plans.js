@@ -64,7 +64,7 @@ const updatedPlan = async (req, res) => {
         };
         const response = await mongodb.getDb()
             .collection('plans')
-            .replaceOne({ _id: new ObjectId(planId) }, updatedPlan);
+            .replaceOne({ _id: new ObjectId(updatedPlanId) }, updatedPlan);
         if (response.modifiedCount > 0) {
             res.status(204).send();
         } else {
