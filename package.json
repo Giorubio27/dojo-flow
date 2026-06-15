@@ -19,9 +19,21 @@
     "start": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "lint": "^1.2.2",
+    "mongodb": "^7.3.0",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "scarf": "^0.0.10",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "eslint": "^10.5.0",
     "nodemon": "^3.1.14"
   }
 }
