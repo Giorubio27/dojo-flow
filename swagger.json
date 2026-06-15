@@ -143,7 +143,16 @@
                 "email": {
                   "example": "any"
                 },
+                "role": {
+                  "example": "any"
+                },
                 "tierLevel": {
+                  "example": "any"
+                },
+                "joinDate": {
+                  "example": "any"
+                },
+                "isActive": {
                   "example": "any"
                 }
               }
