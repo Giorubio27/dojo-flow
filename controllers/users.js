@@ -55,7 +55,7 @@ const updateUserTier = async (req, res) => {
         //#swagger.tags=['users']
         const updatedUserId = req.params.id
         const response = await mongodb.getDb().collection('users')
-            .updateOne({ _id: new ObjectId(userId) },
+            .replaceOne({ _id: new ObjectId(userId) },
                 { $set: { tierLevel: req.body.tierLevel } }
             );
         if (response.modifiedCount > 0) {
