@@ -1,7 +1,6 @@
 const swaggerAutogen = require('swagger-autogen')();
 
 
-
 const doc = {
     info: {
         title: 'Dojo Flow API',
