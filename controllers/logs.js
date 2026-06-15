@@ -56,7 +56,7 @@ const deleteLog = async (req, res) => {
         const logId = req.params.id;
         const response = await mongodb.getDb()
             .collection('logs')
-            .deleteOne({ _id: logId });
+            .deleteOne({ _id: new ObjectId(logId) });
         
         if (response.deletedCount > 0) {
             res.status(204).send();

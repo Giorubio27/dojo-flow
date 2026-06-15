@@ -53,27 +53,35 @@ const createPlan = async (req, res) => {
 };
 
 const updatedPlan = async (req, res) => {
-    try {
-        //#swagger.tags=['plans']
-        updatedPlanId = req.params.id;
-        updatedPlan = {
-            weekCommencing: req.body.weekCommencing,
-            focusArea: req.body.focusArea,
-            difficultyTier: req.body.difficultyTier,
-            description: req.body.description
-        };
-        const response = await mongodb.getDb()
-            .collection('plans')
-            .replaceOne({ _id: new ObjectId(updatedPlanId) }, updatedPlan);
-        if (response.modifiedCount > 0) {
-            res.status(204).send();
-        } else {
-            res.status(404).json({ message: "Training plan not found" })
-        }
-    } catch (err) {
-        res.status(500).json({ message: "Error updating training plan." })
+  try {
+    //#swagger.tags=['plans']
+    const updatedPlanId = req.params.id;
+    if (!ObjectId.isValid(updatedPlanId)) {
+      return res.status(400).json({ message: 'Invalid plan id' });
     }
+    const updatedPlanDoc = {
+      weekCommencing: req.body.weekCommencing,
+      focusArea: req.body.focusArea,
+      difficultyTier: req.body.difficultyTier,
+      description: req.body.description
+    };
+    const response = await mongodb
+      .getDb()
+      .collection('plans')
+      .replaceOne(
+        { _id: new ObjectId(updatedPlanId) },
+        updatedPlanDoc
+      );
+    if (response.matchedCount === 0) {
+      return res.status(404).json({ message: 'Training plan not found' });
+    }
+    return res.status(204).send();
+  } catch (err) {
+    console.error('Error updating training plan:', err);
+    return res.status(500).json({ message: 'Error updating training plan.' });
+  }
 };
+
 
 const deletePlan = async (req, res) => {
     try {
