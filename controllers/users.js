@@ -51,15 +51,20 @@ const createUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
+    //#swagger.tags=['users']
   try {
     const userId = req.params.id;
     if (!ObjectId.isValid(userId)) {
       return res.status(400).json({ message: 'Invalid user id' });
     }
     const updatedUser = {
-      name: req.body.name,
-      email: req.body.email,
-      tierLevel: req.body.tierLevel
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+        tierLevel: req.body.tierLevel,
+        joinDate: req.body.joinDate,
+        isActive: req.body.isActive
+      
     };
     const result = await mongodb
       .getDb()
@@ -68,10 +73,11 @@ const updateUser = async (req, res) => {
         { _id: new ObjectId(userId) },
         updatedUser
       );
-    if (result.matchedCount === 0) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-    return res.status(204).send();
+      if (result.modifiedCount > 0) {
+          return res.status(204).send();
+      } else {
+          return res.status(404).json({message: "Change to user was not made"})
+      }
   } catch (err) {
     console.error('Error updating user:', err);
     return res.status(500).json({ message: 'Error updating user' });
@@ -101,6 +107,6 @@ module.exports = {
     getAllUsers,
     getUserById,
     createUser, 
-    updateUserTier,
+    updateUser,
     deleteUser
 }
