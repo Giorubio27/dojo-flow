@@ -24,7 +24,7 @@ const getSingleLog = async (req, res) => {
         if (!log) {
             return res.status(404).json({ message: "Attendance log not found" })
         }
-        res.setHeader('Content-type', 'application/json');
+        res.setHeader('Content-Type', 'application/json');
         res.status(200).json(log);
     } catch (err) {
         res.status(500).json({ message: "Error retrieving attendance log." });

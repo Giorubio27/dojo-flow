@@ -1,0 +1,7 @@
+### GET ALL USERS
+GET https://dojo-flow.onrender.com/users/
+Content-Type: application/json
+
+### GET USER BY ID
+GET https://dojo-flow.onrender.com/users/666c1a2b3c4d5e6f7a8b9002
+Content-Type: application/json
